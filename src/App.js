@@ -1,19 +1,20 @@
-
-import './App.css';
-import Header from './components/Header';
-import Body from './components/Body';
-import Body2 from './components/Body2';
-import Post from './components/Post';
-
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import "./App.css";
+import About from "./page/About";
+import Home from "./page/Home";
 
 function App() {
   return (
-    <div>
-      <Header/>
-      <Body/>
-      <Body2 username={"ssar"} password={"1234"} />
-      <Post/>
-    </div>
+    <BrowserRouter>
+      <div>
+        <Link to="/">홈</Link>
+        <Link to="/about">소개</Link>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
