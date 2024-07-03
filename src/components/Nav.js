@@ -1,11 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
+
+const SyNav = styled.div`
+  display: flex;
+  justify-content: space-around;
+`;
+
 function Nav(props) {
   return (
-    <div>
+    <SyNav>
       <Link to="/">홈</Link>
       <Link to="/about">소개</Link>
-    </div>
+      <Link to="/login">로그인화면가기</Link>
+    </SyNav>
   );
 }
+
 export default Nav;

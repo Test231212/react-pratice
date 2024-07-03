@@ -1,19 +1,25 @@
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
+import Nav from "./components/Nav";
 import About from "./page/About";
 import Home from "./page/Home";
+import Info from "./page/Info";
+import List from "./page/List";
+import Login from "./page/Login";
+import LoginComplete from "./page/LoginComplete";
 
 function App() {
   return (
     <BrowserRouter>
-      <div>
-        <Link to="/">홈</Link>
-        <Link to="/about">소개</Link>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
-      </div>
+      <Nav />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/info/:id" element={<Info />} />
+        <Route path="/list" element={<List />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/loginComplete" element={<LoginComplete />} />
+      </Routes>
     </BrowserRouter>
   );
 }
